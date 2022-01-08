@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <!--youtube가 출력되는 요소-->
+      <div id="player"></div> 
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+      // : tag 변수에 createElement, 즉, 요소를 생성하는 메서드 생성
+      //   그 메서드의 이름 - script
+      //   즉, script 태그를 생성해서 tag라는 변수에 할당
+      // : 이렇게 할당을 한다고 해서 HTML에 바로 반영되는 것은 아님
+      //   어떻게 반영하느냐는 아래 내용에 있음  
+
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      // HTML에 반영되기 전에 생성한 script 태그부분의 src(소스)에대가 
+      //    유튜브의 영상을 재생할 수 있는 명령의 JS파일을 가지고 옴.
+      // // 즉, script태그의 source 속성에 외부 JS 라이브러라기 할당이 되는 것이고,
+      //    기존에 gsap , swiper JS같은 외부라이브러리를 가져올 때 썼던 script형태와 동일 
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      //document.getElementByTagName, 즉, script태그를 가지고 있는 요소들 중에
+      //  0부터 번호를 매기는 방법을 이용해서 그렇게 찾은 스크립트 중에 제일 첫번째 요소를
+      //  firstScriptTag변수에 할당해줌
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      /*그렇게 찾은 첫번째 script태그에 parentNode, 즉 부모요소를 찾아서
+        insetBefore, 무엇인가의 이전에 삽입을 할 것임
+        :삽입되는 요소자체 - 생성한 tag 변수
+        : 어디의 이전이냐 - firstScript태그의 이전*/
+
+      /* 정리 : HTML에서 사용하는 여러가지의 script중 첫번째 script태그를 찾아서
+               그거보다 먼저 youtube API를 사용할 수 있는 script 태그를 앞에다 삽입을 해서
+               실행을 한다는 것
+              : 그래야지만 아래쪽에 있는 명령이 실행될 수 있음 */
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      /* onYouTubeIframeAPIReady => 이 함수명은 외부에서 가지고 오는 유튜브를 제어할 수 있는 
+                                    외부 JS라이브러리에서 이 함수 이름을 자동으로 찾게 만들어 놓음
+                                 => 따라서 API가 이 함수를 찾아서 잘 동작시킬 수 있도록 똑같은 이름을 
+                                    명시해줘야함  */
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', { /* YT라는 유튜브 명령에서 Player라는 메소드를 실행해서 어떠한 옵션을 적어서 영성이 재생될 수 있도록 함*/  
+          height: '360',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+  </body>
+</html>

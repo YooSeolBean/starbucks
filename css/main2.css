@@ -1,0 +1,265 @@
+.wrap .header{
+  display: flex;
+  background-position:fixed;
+  height:121px;
+  justify-content: space-between;
+  background-color:#F6F5F0;
+  border-bottom:2px solid #DEDDDD;
+}
+
+.logo{
+  margin-top:22px;
+  margin-left:211px;
+}
+
+#list_array{
+  display: flex;
+  flex-direction: column;
+  margin-right:211px;
+}
+
+.list_top,.list_sec{
+  display: flex;
+  font-size:12px;
+  cursor: pointer;
+}
+
+.list_top{
+  margin-top:22px;
+  height:25px;
+}
+
+.list_top_inner{
+  margin-right:32px;
+  color:#555555;
+  font-weight: 500;
+}
+
+.list_top_inner:hover{
+ color:#000;
+}
+
+
+.list_sec{
+  margin-top:33px;
+  margin-bottom:35px;
+  line-height: 16.8px;
+  color:#555555;
+}
+
+.list_sec_inner{
+  margin-right: 39px;;
+}
+
+/*main*/
+
+section.main_image{
+  display:flex;
+  background-image: url("/images/visual_bg.jpg");
+  background-repeat: no-repeat;
+  position:relative;
+  padding-bottom:40px;
+}
+
+.main_title_inner{/*209px*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:458px;
+  height:208px;
+  margin-left:209px;
+  margin-top:130px;
+  animation: fadein 3s;
+  -moz-animation:fadein 3s;
+  -o-animation: fadein 3s;
+  -webkit-animation: fadein 3s;
+  
+}
+
+.main_drink0_inner{
+  animation: fadein 3s;
+  -moz-animation:fadein 3s;
+  -o-animation: fadein 3s;
+  -webkit-animation: fadein 3s;
+  animation-delay: 1s;
+  
+
+}
+
+.main_drink1_inner{
+  animation: fadein 3s;
+  -moz-animation:fadein 3s;
+  -o-animation: fadein 3s;
+  -webkit-animation: fadein 3s;
+  animation-delay: 2s;
+}
+
+.main_spoon{
+  animation: fadein 3s;
+  -moz-animation:fadein 3s;
+  -o-animation: fadein 3s;
+  -webkit-animation: fadein 3s;
+  animation-delay: 3s;
+}
+
+.main_title_inner .title_img{
+  margin-bottom: 38px;;
+}
+
+.main_title_inner .more_inner{
+  border: 2px solid #592B18;
+  color:#592B18;
+  font-weight: 700;
+  font-style: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  width:127px;
+  padding: 12px;
+  border-radius: 4px;
+  margin: auto 161px;
+  transition:.7s;
+  cursor: pointer;
+}
+
+.main_title_inner .more_inner:hover{
+  background-color:#592B18 ;
+  color:#fff;
+}
+
+
+.main_image .main_spoon{
+  margin-top:200px;
+  margin-left:250px;
+  position:absolute;
+}
+
+.drink_img_text1{
+  margin-top:287px;
+ 
+}
+
+.main_drink1_inner{
+  z-index: 1;;
+}
+
+.drink_img1{
+  margin-top:114px;
+  margin-left:-22px;
+ 
+ 
+}
+
+ .drink_img2{
+  margin-top:64px;
+  margin-left:-70px;
+
+} 
+
+
+.drink_img_text2{
+  margin-top:30px;
+  margin-left:-200px;
+}
+
+/*animation*/
+
+@keyframes fandin{
+ from{
+   opacity: 0;
+ }
+
+ to{
+   opacity:1;
+ }
+
+}
+
+@-moz-keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.notice{
+  display: flex;
+  justify-content: space-around;
+  height:59px;
+  margin-top:-35px;
+}
+
+.notice .notice_inner{
+ 
+  display: flex;
+  justify-content: space-between;
+  background-color: #333333;
+  width:1000px;
+  margin-left:-250px;
+}
+
+.notice_inner .notice_title, .notice_content, .plus{
+  color:#fff;
+  padding-top:20px;
+  
+}
+
+.notice_inner .notice_title{
+  margin-left:300px;
+  font-weight: 700; 
+}
+
+.notice_inner .notice_content{
+  padding-right:250px;  
+}
+
+.notice_inner .plus{
+  margin-right:20px;
+  margin-left:100px;
+}
+
+.promotion{
+  display: flex;
+  padding-top:20px;
+} 
+
+.promotion .promotion_inner{
+  
+}
+
+.promotion .upload{
+  padding-left:25px;
+  margin-right: 100px;
+  margin-bottom:10px;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+

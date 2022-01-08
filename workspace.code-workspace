@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\starbucks-vanilla-app-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "스타벅스",
+		"liveServer.settings.port": 5502
+	}
+}
